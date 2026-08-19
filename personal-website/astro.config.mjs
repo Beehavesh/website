@@ -1,9 +1,12 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
 export default defineConfig({
+  site: "https://beehavesh.github.io/website/",
+  base: "/website",
+
   fonts: [
     { 
       provider: fontProviders.fontsource(),
@@ -25,5 +28,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: "https://beehavesh.github.io/website/", // change to your domain
 });
