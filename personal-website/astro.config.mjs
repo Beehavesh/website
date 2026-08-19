@@ -25,5 +25,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: "https://decker-theme.pages.dev", // change to your domain
+  site: "https://beehavesh.github.io/website/", // change to your domain
 });
