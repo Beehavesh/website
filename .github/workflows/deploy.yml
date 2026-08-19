@@ -20,6 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: withastro/action@v3
+        with:
+          path: ./personal-website
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
