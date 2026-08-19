@@ -26,7 +26,7 @@ const research = defineCollection({
         slug: z.string().max(50),
         title: z.string().max(50),
         publishedDate: z.date(),
-        category: z.enum(["systems", "ai", "productivity"]), // change and add research categories here
+        category: z.enum(["systems", "ai", "network security", "cybersecurity", "programming languages"]), // change and add research categories here
         readingTime: z.number().optional(),
         isDraft: z.boolean()
     })
