@@ -23,7 +23,7 @@ jobs:
         with:
           path: ./personal-website
           node-version: 22
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: ./personal-website/dist
 
