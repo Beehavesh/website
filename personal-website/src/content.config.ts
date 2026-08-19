@@ -19,14 +19,14 @@ const projects = defineCollection({
     })
 });
 
-const blog = defineCollection({
-    loader: glob({pattern: "src/content/blog/**/*.md"}),
+const research = defineCollection({
+    loader: glob({pattern: "src/content/research/**/*.md"}),
     schema: z.object({
         id: z.number(),
         slug: z.string().max(50),
         title: z.string().max(50),
         publishedDate: z.date(),
-        category: z.enum(["systems", "ai", "productivity"]), // change and add blog categories here
+        category: z.enum(["systems", "ai", "productivity"]), // change and add research categories here
         readingTime: z.number().optional(),
         isDraft: z.boolean()
     })
@@ -59,4 +59,4 @@ const skillsAndTools = defineCollection({
 })
 
 
-export const collections = { projects, blog, experience, education, skillsAndTools };
+export const collections = { projects, research, experience, education, skillsAndTools };
