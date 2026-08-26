@@ -36,7 +36,7 @@ const pdfPath = `${import.meta.env.BASE_URL}/papers/${article.data.pdfUrl.replac
     title={`Published On: ${formatDate(publishedDate)}`}
     titleHeading={`#${category}`}
   >
-    <article class="bg-base-950">
+    <article class="markdown-content flex flex-col gap-24">
       <h1 class="text-3xl font-bold mb-2">{title}</h1>
 
       <section class="abstract mb-8">
