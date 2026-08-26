@@ -23,10 +23,13 @@ const research = defineCollection({
     loader: glob({pattern: "src/content/research/**/*.md"}),
     schema: z.object({
         id: z.number(),
-        slug: z.string().max(60),
-        title: z.string().max(60),
+        slug: z.string().max(100),
+        title: z.string().max(100),
         publishedDate: z.date(),
-        category: z.enum(["systems", "ai", "network security", "cybersecurity", "programming languages"]), // change and add research categories here
+        category: z.enum(["systems", "ai", "cybersecurity", "programming languages"]), // change and add research categories here
+        abstract: z.string().max(3000),
+        pdfUrl: z.string(),           // path to the PDF, e.g. "/papers/my-paper.pdf"
+        previewImage: z.string().optional(), // thumbnail of page 1, if you have one
         readingTime: z.number().optional(),
         isDraft: z.boolean()
     })

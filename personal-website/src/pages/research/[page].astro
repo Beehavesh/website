@@ -28,9 +28,59 @@ export const getStaticPaths = (async () => {
 const { article } = Astro.props;
 const { Content } = await render(article);
 const { title, category, publishedDate } = article.data;
+const pdfPath = `${import.meta.env.BASE_URL}papers/${article.data.pdfUrl.replace(/^\//, '')}`;
 ---
 
-<Layout
+<Layout title={article.data.title}>
+  <article>
+    <h1>{article.data.title}</h1>
+    <p class="date">{article.data.publishedDate.toLocaleDateString()}</p>
+
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>{article.data.abstract}</p>
+    </section>
+
+    <div class="pdf-actions">
+      <a href={pdfPath} download class="btn">Download PDF</a>
+      <a href={pdfPath} target="_blank" rel="noopener" class="btn">Open in new tab</a>
+    </div>
+
+    <div class="pdf-viewer">
+      <iframe
+        src={`${pdfPath}#view=FitH`}
+        title={`${article.data.title} PDF preview`}
+        width="100%"
+        height="800"
+        style="border: 1px solid var(--border-color, #333);"
+      ></iframe>
+    </div>
+
+    <section class="body-content">
+      <Content />
+    </section>
+  </article>
+
+
+<!--// ---
+// src/pages/research/[slug].astro
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('research');
+  return papers.map((paper) => ({
+    params: { slug: paper.data.slug },
+    props: { paper },
+  }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await render(paper);
+const pdfPath = `${import.meta.env.BASE_URL}papers/${paper.data.pdfUrl.replace(/^\//, '')}`;
+---
+
+  <Layout
     title={title}
     description=""
     ogImage=""
@@ -44,3 +94,4 @@ const { title, category, publishedDate } = article.data;
     </div>
     </Section>
 </Layout>
+</Layout>-->
