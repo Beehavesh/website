@@ -1,9 +1,10 @@
-.markdown-content h1,
-.markdown-content h2,
-.markdown-content h3,
-.markdown-content h4,
-.markdown-content h5,
-.markdown-content h6 {
+@layer components {
+  .markdown-content h1,
+  .markdown-content h2,
+  .markdown-content h3,
+  .markdown-content h4,
+  .markdown-content h5,
+  .markdown-content h6 {
     font-family: var(--font-pixels);
     color: var(--color-base-200);
 }
@@ -25,4 +26,5 @@
     font-family: var(--font-pixels);
     color: var(--color-base-100);
     font-size: 20px;
+}
 }
