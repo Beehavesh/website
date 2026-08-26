@@ -36,7 +36,7 @@ const pdfPath = `${import.meta.env.BASE_URL}/papers/${article.data.pdfUrl.replac
     <h1>{article.data.title}</h1>
     <p class="date">{article.data.publishedDate.toLocaleDateString()}</p>
 
-    <section class="abstract">
+    <section class="markdown-content flex flex-col gap-24">
       <h2>Abstract</h2>
       <p>{article.data.abstract}</p>
     </section>
