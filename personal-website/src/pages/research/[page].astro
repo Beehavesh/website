@@ -28,7 +28,7 @@ export const getStaticPaths = (async () => {
 const { article } = Astro.props;
 const { Content } = await render(article);
 const { title, category, publishedDate } = article.data;
-const pdfPath = `${import.meta.env.BASE_URL}papers/${article.data.pdfUrl.replace(/^\//, '')}`;
+const pdfPath = `${import.meta.env.BASE_URL}${article.data.pdfUrl.replace(/^\//, '')}`;
 ---
 
 <Layout title={article.data.title}>
