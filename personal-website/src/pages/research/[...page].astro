@@ -15,6 +15,7 @@ import { type GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 export const getStaticPaths = (async ({paginate}) => {
     const research = await getCollection("research");
+    console.log(research.map(a => a.id));
     const researchWithReadingTime = research.map((article) => ({
         ...article,
         readingTime: getReadingTime(article.body ?? "")
