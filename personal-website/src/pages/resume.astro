@@ -1,0 +1,24 @@
+---
+const resumePath = `${import.meta.env.BASE_URL}resume.pdf`;
+---
+
+<section class="resume mb-8">
+  <h2 class="font-pixels text-base-200 text-24 uppercase mb-2">Resume</h2>
+  <div class="flex gap-4">
+    
+      href={resumePath}
+      download
+      class="font-pixels text-base-100 text-20 px-4 py-2 border border-base-700 rounded hover:bg-base-900"
+    >
+      Download Resume
+    </a>
+    
+      href={resumePath}
+      target="_blank"
+      rel="noopener"
+      class="font-pixels text-base-100 text-20 px-4 py-2 border border-base-700 rounded hover:bg-base-900"
+    >
+      View Resume
+    </a>
+  </div>
+</section>

@@ -16,8 +16,7 @@ const { title, publishedDate, slug, category, readingTime } = Astro.props;
 
 const articleInfo = [
     { icon: Calendar, text: formatDate(publishedDate) },
-    { icon: Tag, text: `#${category}` },
-    { icon: Hourglass, text: `${readingTime} min read`}
+    { icon: Tag, text: `#${category}` }
 ]
 ---
 
