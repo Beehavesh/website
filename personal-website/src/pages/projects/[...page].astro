@@ -28,18 +28,21 @@ const { page } = Astro.props;
         title="Projects"
         titleHeading="Things I've built, broken and experimented with"
     >
-    {
-        page.data.map((project) => (
-            <ProjectCard 
-                    title={project.data.title}
-                    year={project.data.year}
-                    github={project.data.github}
-                    website={project.data.liveSite}
-                    description={project.data.description}
-                    tools={project.data.tools}
-            />
-        ))
-    }
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
+        {
+            page.data.map((project) => (
+                <ProjectCard 
+                        title={project.data.title}
+                        year={project.data.year}
+                        github={project.data.github}
+                        website={project.data.liveSite}
+                        description={project.data.description}
+                        tools={project.data.tools}
+                        image={project.data.image}
+                />
+            ))
+        }
+    </div>
     <Pagination prev={page.url.prev} next={page.url.next} />
     </Section>
 </Layout>
