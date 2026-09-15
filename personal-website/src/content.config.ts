@@ -4,7 +4,7 @@ import { z } from 'astro/zod'
 
 const projects = defineCollection({
     loader: glob({pattern: "src/content/projects/**/*.md"}),
-    schema: z.object({
+    schema: ({ image }) => z.object({
         id: z.number(),
         title: z.string().max(50),
         tools: z.preprocess(
@@ -14,7 +14,7 @@ const projects = defineCollection({
         liveSite: z.url().optional(),
         github: z.url().optional(),
         description: z.string().max(350),
-        image: z.string().optional(),   // new — path to a screenshot/thumbnail
+        image: image().optional(),   // now validated as a real image, not just a string
         isFeatured: z.boolean(),
         isDraft: z.boolean()
     })

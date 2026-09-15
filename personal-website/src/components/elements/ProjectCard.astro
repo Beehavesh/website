@@ -1,5 +1,6 @@
 ---
 // assets
+import { Image } from "astro:assets";
 import Calendar from "../../assets/icons/Calendar.astro";
 import Github from "../../assets/icons/GitHub.astro";
 import Website from "../../assets/icons/Website.astro";
@@ -20,10 +21,12 @@ const links = [
 
 <div class="border-2 border-base-900 flex flex-col">
     {image && (
-        <img
+        <Image
             src={image}
             alt={`${title} preview`}
-            class="w-full h-192 object-cover border-b-2 border-base-900"
+            width={600}
+            height={340}
+            class="w-full aspect-video object-cover object-top border-b-2 border-base-900"
             loading="lazy"
         />
     )}
